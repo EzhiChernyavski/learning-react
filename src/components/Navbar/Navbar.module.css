@@ -1,0 +1,32 @@
+.nav {
+  grid-area: n;
+  background-color: bisque;
+  padding: 15px;
+}
+
+.item a {
+  color: #ff007a;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.item a:hover {
+  color: darkviolet;
+}
+
+.item a.active{
+  color: darkviolet;
+}
+
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.friends h3 {
+  color: #ff007a;
+  width: 100%;
+}

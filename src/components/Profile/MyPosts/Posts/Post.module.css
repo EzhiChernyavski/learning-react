@@ -1,0 +1,18 @@
+.item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  color:coral;
+}
+
+.item .item_img {
+  width: 40px;
+  border-radius: 40%;
+  margin-right: 10px;
+}
+
+.item .likes {
+  width: 100%;
+  margin-top: 5px;
+}

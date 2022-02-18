@@ -1,0 +1,10 @@
+.message {
+    padding: 15px;
+    margin: 20px 10px 20px 10px;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+
+.message p {
+    margin: 0px;
+}

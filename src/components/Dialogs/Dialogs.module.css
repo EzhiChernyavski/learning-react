@@ -1,0 +1,30 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    height: 100%;
+}
+
+.dialogs a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+
+.dialogs .active {
+    color: orange;
+}
+
+
+.messages {
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+.message_area {
+    padding: 0px 20px 0px 15px;
+}
+
+.message_area textarea {
+    width: 100%;
+}
