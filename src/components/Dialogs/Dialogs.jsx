@@ -8,10 +8,10 @@ const Dialogs = (props) => {
 
     let dialogsPage = props.dialogsPage;
     //Dialog render
-    let dialogsElement = dialogsPage.dialogData.map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
+    let dialogsElement = dialogsPage.dialogData.map(d => <DialogItem name={d.name} key={d.id} avatar={d.avatar} />);
 
     //Message render
-    let messagesElements = dialogsPage.messagesData.map(m => <Message message={m.message} />);
+    let messagesElements = dialogsPage.messagesData.map(m => <Message message={m.message} key={m.id} />);
 
     const addMessage = () => {
         props.sendMessage();

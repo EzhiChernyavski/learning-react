@@ -2,14 +2,16 @@ import React from "react";
 import ff from "./FavoriteFriends.module.css";
 import {NavLink} from "react-router-dom";
 
-const FavoriteFriends = (props) => {
+const Person = (props) => {
+    let pathname = '/dialogs/' + props.id;
     return (
         <div className={ff.favoriteItem}>
-            <NavLink to={props.path}>
-                <img src={props.store.avatar}/>
-                {props.name}
+            <NavLink to={pathname}>
+                <img src={props.avatar}/>
+                <p>{props.name}</p>
             </NavLink>
         </div>
     )
+
 }
-export default FavoriteFriends;
+export default Person;

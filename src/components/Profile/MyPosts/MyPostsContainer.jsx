@@ -48,7 +48,6 @@ const mapDispatchToProps = (dispatch) => {
         updateNewPostValue: (value) => {
             let action = updateNewPostActionCreator(value);
             dispatch(action);
-
         }
 
     }

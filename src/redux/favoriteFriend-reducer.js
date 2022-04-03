@@ -1,15 +1,8 @@
-const ADD_MESSAGE = "ADD_MESSAGE";
-const UPDATE_NEW_MESSAGE_VALUE = "UPDATE_NEW_MESSAGE_VALUE,";
+const FAVORITE_FRIEND = "FAVORITE_FRIEND";
 
 let initialState = {
-    messagesData: [
-        {id: 1, message: "Hi"},
-        {id: 2, message: "Yo"},
-        {id: 3, message: "How are you?"}
-    ],
-    newMessageValue: "",
-    dialogData: [
-        {id: 1, name: "David", avatar: ""},
+    person: [
+        { id: 1, name: "David", avatar: "" },
         {
             id: 2,
             name: "Edvard",
@@ -31,34 +24,18 @@ let initialState = {
             avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
         }
     ]
-}
-
-const dialogsReducer = (state = initialState, action) => {
-
+};
+const favoriteFiendsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
-            let newMessage = state.newMessageValue;
-            return {
-                ...state,
-                messagesData: [...state.messagesData, {id: 5, message: newMessage}],
-                newMessageValue: "",
-            };
-        case UPDATE_NEW_MESSAGE_VALUE:
-            return {
-                ...state,
-                newMessageValue: action.newMessage,
-            }
+        case FAVORITE_FRIEND:
+            let stateCopy = {...state};
+            stateCopy.dialogData = [...state.dialogData];
+            return stateCopy;
         default:
             return state;
     }
 }
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageActionCreator = (value) => (
-    {
-        type: UPDATE_NEW_MESSAGE_VALUE,
-        newMessage: value
-    }
-);
+export const updateFavoriteFriends = () => ({type: FAVORITE_FRIEND});
 
-export default dialogsReducer;
+export default favoriteFiendsReducer;

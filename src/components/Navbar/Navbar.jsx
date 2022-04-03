@@ -1,16 +1,9 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import navbar from './Navbar.module.css';
+import FavoriteFriendsContainer from "./FavoriteFriends/FavoriteFriendsContainer";
 
-const Navbar = (props) => {
-
-    /*let state = props.state;
-
-    let avatars = state.dialogsPage.dialogData.map(a => {
-        if (a.id > 1 && a.id <= 4 ) {
-            return <FavoriteFriends avatar={a.avatar} name={a.name} id={a.id}/>;
-        }
-    });*/
+const Navbar = () => {
     return (
         <nav className={navbar.nav}>
             <div className={navbar.item}>
@@ -43,10 +36,10 @@ const Navbar = (props) => {
                 <h3>Friends</h3>
                 {avatars}
             </div>*/}
-            {/*<div className={navbar.friends}>
+            {<div className={navbar.friends}>
                 <h3>Friends</h3>
                 <FavoriteFriendsContainer />
-            </div>*/}
+            </div>}
         </nav>
     )
 }

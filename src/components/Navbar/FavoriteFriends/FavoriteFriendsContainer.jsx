@@ -1,9 +1,23 @@
 import React from "react";
-import ff from "./FavoriteFriends.module.css";
-import {NavLink} from "react-router-dom";
-import StoreContext from "../../../StoreContext";
-import FavoriteFriends from "./FavoriteFreinds";
+import FavoriteFriends from "./FavoriteFriends";
+import {connect} from "react-redux";
+import {updateFavoriteFriends} from "../../../redux/favoriteFriend-reducer";
 
+const mapStateToProps = (state) => {
+    return {
+        favoriteFriends: state.favoriteFriends
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateFavoriteFriends: () => {
+            let action = updateFavoriteFriends();
+            dispatch(action);
+        }
+    }
+}
+/*
 const FavoriteFriendsContainer = () => {
     return (
         <StoreContext.Consumer>
@@ -26,6 +40,8 @@ const FavoriteFriendsContainer = () => {
             }
         </StoreContext.Consumer>
     );
-}
+}*/
+
+const FavoriteFriendsContainer = connect(mapStateToProps, mapDispatchToProps) (FavoriteFriends);
 
 export default FavoriteFriendsContainer;

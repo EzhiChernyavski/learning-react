@@ -1,5 +1,6 @@
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
+import favoriteFiendsReducer from "./favoriteFriend-reducer";
 
 export const store = {
     _state: {
@@ -20,15 +21,15 @@ export const store = {
             ],
             newMessageValue: "",
             dialogData: [
-                { id: 1, name: "Ezhi", avatar: "" },
+                { id: 1, name: "David", avatar: "" },
                 {
                     id: 2,
-                    name: "Kozhan",
+                    name: "Edvard",
                     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                     id: 3,
-                    name: "Chaika",
+                    name: "Sam",
                     avatar: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                 },
                 {
@@ -56,13 +57,12 @@ export const store = {
     dispatch(action) {
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.dialogsPage.dialogData = favoriteFiendsReducer(this._state.dialogsPage.dialogData, action);
 
         this._callSubscriber(this._state);
     }
 }
 
 export default store;
-
-window._state = store;
 
 
